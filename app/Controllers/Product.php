@@ -14,6 +14,7 @@ class Product extends BaseController
         $this->ProductModel = new ProductModel();
     }
 
+    //view database
     public function index()
     {
         $data = [
@@ -23,5 +24,26 @@ class Product extends BaseController
             'isi' => 'product/list',
         ];
         echo view('layout/wrapper', $data);
+    }
+
+    //add database
+    public function tambah()
+    {
+        $data = [
+            'title' => 'Page Tambah',
+            'isi' => 'product/tambah',
+        ];
+        echo view('layout/wrapper', $data);
+    }
+
+    public function save()
+    {
+        $data = [
+            'product_name' => $this->request->getPost('product_name'),
+            'product_description' => $this->request->getPost('product_description')
+        ];
+        $this->ProductModel->insert_product($data);
+        session()->setFlashdata('success', 'Data Berhasil di Tambahkan');
+        return redirect()->to(base_url('product'));
     }
 }

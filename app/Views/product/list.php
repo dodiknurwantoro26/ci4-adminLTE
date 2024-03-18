@@ -1,4 +1,16 @@
 <div class="col-sm-12">
+    <a href="<?= base_url() ?>/product/tambah" class="btn btn-primary mb-3">Tambah Data</a>
+
+    <?php
+    if (!empty(session()->getFlashdata())) {
+
+    ?>
+        <div class="alert alert-success">
+            <?= session()->getFlashdata('success', 'Data Berhasil Ditambahkan'); ?>
+
+        </div>
+    <?php } ?>
+
     <table id="example1" class="table table-bordered table-striped">
         <thead>
             <tr>
