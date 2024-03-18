@@ -53,8 +53,6 @@
 <!-- AdminLTE App -->
 <script src="<?= base_url() ?>template/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="<?= base_url() ?>template/dist/js/demo.js"></script>
-<!-- Page specific script -->
 <script>
     $(function() {
         $("#example1").DataTable({
