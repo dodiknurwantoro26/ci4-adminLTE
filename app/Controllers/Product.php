@@ -35,7 +35,7 @@ class Product extends BaseController
         ];
         echo view('layout/wrapper', $data);
     }
-
+    // eksekusi add database
     public function save()
     {
         $data = [
@@ -44,6 +44,37 @@ class Product extends BaseController
         ];
         $this->ProductModel->insert_product($data);
         session()->setFlashdata('success', 'Data Berhasil di Tambahkan');
+        return redirect()->to(base_url('product'));
+    }
+
+    //edit value di view
+    public function edit($product_id)
+    {
+        $data = [
+            'title' => 'Page Edit',
+            'product' => $this->ProductModel->edit_product($product_id),
+            'isi' => 'product/edit',
+        ];
+        echo view('layout/wrapper', $data);
+    }
+
+    // update value untuk upload ke database
+    public function update($product_id)
+    {
+        $data = [
+            'product_name' => $this->request->getPost('product_name'),
+            'product_description' => $this->request->getPost('product_description')
+        ];
+        $this->ProductModel->update_product($data, $product_id);
+        session()->setFlashdata('success', 'Data Berhasil di update');
+        return redirect()->to(base_url('product'));
+    }
+
+    //delele value database
+    public function delete($product_id)
+    {
+        $this->ProductModel->delete_product($product_id);
+        session()->setFlashdata('warning', 'Data Terhapus');
         return redirect()->to(base_url('product'));
     }
 }

@@ -28,8 +28,8 @@
                     <th><?= $value['product_name']; ?></th>
                     <th><?= $value['product_description'] ?></th>
                     <th>
-                        <a href="" class="btn btn-warning">Edit</a>
-                        <a href="" class="btn btn-danger">Delete</a>
+                        <a href="<?= base_url('/product/edit/' . $value['product_id']) ?>" class="btn btn-warning">Edit</a>
+                        <a href="<?= base_url('/product/delete/' . $value['product_id']) ?>" class="btn btn-danger" onclick="return confirm('Apakah benar akan delete data?')">Delete</a>
                     </th>
                 </tr>
             <?php endforeach; ?>
