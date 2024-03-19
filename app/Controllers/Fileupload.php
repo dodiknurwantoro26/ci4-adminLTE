@@ -19,18 +19,20 @@ class Fileupload extends BaseController
     //view database
     public function index()
     {
-        $data = [
-            'title' => 'Page Upload Gambar',
-            'data' => $this->UploadModel->get_upload(),
-            'validation' => $this->validator,
-            'isi' => 'upload',
-        ];
-        echo view('layout/wrapper', $data);
+        if (!$this->validate([])) {
+            $data = [
+                'title' => 'Page Upload Gambar',
+                'data' => $this->UploadModel->get_upload(),
+                'validation' => $this->validator,
+                'isi' => 'upload',
+            ];
+            echo view('layout/wrapper', $data);
+        }
     }
 
     public function save()
     {
-        //validasi
+        //validasi methode
         if ($this->request->getMethod() !== 'post') {
             return redirect()->to(base_url('fileupload'));
         }
@@ -47,7 +49,7 @@ class Fileupload extends BaseController
             //ambil gambar yang diupload
             $file_gambar = $this->request->getFile('gambar');
             //pindah file gambar setelah upload ke folder publick/upload
-            $file_gambar->move(ROOTPATH . 'public/upload');
+            $file_gambar->move(ROOTPATH . 'public/img');
 
             //validasi format text untuk upload ke DB
             $data = [
