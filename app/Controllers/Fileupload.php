@@ -22,7 +22,7 @@ class Fileupload extends BaseController
         $data = [
             'title' => 'Page Upload Gambar',
             'data' => $this->UploadModel->get_upload(),
-            'validate' => $this->validator,
+            'validation' => $this->validator,
             'isi' => 'upload',
         ];
         echo view('layout/wrapper', $data);
@@ -32,16 +32,16 @@ class Fileupload extends BaseController
     {
         //validasi
         if ($this->request->getMethod() !== 'post') {
-            return redirect()->to(base_url('upload'));
+            return redirect()->to(base_url('fileupload'));
         }
 
         //validasi file/data yang boleh di upload
-        $validate = $this->validate([
-            'gambar' => 'uploaded[gambar]|mime-in[gambar,image/jpg,image/png,image/jpeg,]|max_size[gambar,2000]'
+        $validated = $this->validate([
+            'gambar' => 'uploaded[gambar]|mime_in[gambar,image/jpg,image/png,image/jpeg,]|max_size[gambar,2000]'
         ]);
 
         //validasi tipe file salah
-        if ($validate ==  FALSE) {
+        if ($validated ==  FALSE) {
             return $this->index();
         } else {
             //ambil gambar yang diupload
@@ -58,7 +58,7 @@ class Fileupload extends BaseController
 
             //upload data format text
             $this->UploadModel->get_insert($data);
-            return redirect()->to(base_url('upload'))->with('success', 'Fle Berhasil di Upload');
+            return redirect()->to(base_url('fileupload'))->with('success', 'Fle Berhasil di Upload');
         }
     }
 }

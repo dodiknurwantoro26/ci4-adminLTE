@@ -10,13 +10,16 @@
 
      <!-- notifikasi jika upload gagal -->
      <?php
-        $errors = $validate->getErrors();
-        if (!empty($errors)) { ?>
-         <div class="alert alert-danger">
-             <?= $validate->listError() ?>
-         </div>
+        // $errors = $validate->getErrors();
+        // if (!empty($errors)) { 
+        ?>
+     <!-- <div class="alert alert-danger">
+         <?php // $validate->listError() 
+            ?>
+     </div> -->
 
-     <?php } ?>
+     <?php //} 
+        ?>
 
      <!-- general form elements -->
      <div class="card card-primary">
@@ -25,7 +28,7 @@
          </div>
          <!-- /.card-header -->
          <!-- form start -->
-         <?= form_open_multipart(base_url('upload/save')); ?>
+         <?= form_open_multipart(base_url('fileupload/save')); ?>
          <div class="card-body">
              <div class="form-group">
                  <label>Keterangan?Label</label>
@@ -75,7 +78,7 @@
                  <tr>
                      <th><?= $no++; ?></th>
                      <th><?= $value['ket']; ?></th>
-                     <th><?= $value['gambar']; ?></th>
+                     <th><img src="<?= base_url('upload/' . '$value[gambar]'); ?>" width="200px"></th>
                  </tr>
              <?php endforeach;
                 ?>

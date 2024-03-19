@@ -7,3 +7,4 @@ use CodeIgniter\Router\RouteCollection;
  */
 //$routes->get('/', 'Home::index');
 $routes->get('/', 'Beranda::index');
+//$routes->post('/', 'Fileupload::save');
