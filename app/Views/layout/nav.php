@@ -78,10 +78,28 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url() ?>/product" class="nav-link">
+                    <a href="<?= base_url('product') ?>" class="nav-link">
                         <i class="nav-icon fas fa-th"></i>
                         <p>
                             Product
+                            <!-- <span class="right badge badge-danger">New</span> -->
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('mahasiswa') ?>" class="nav-link">
+                        <i class="nav-icon fas fa-user"></i>
+                        <p>
+                            Mahasiswa
+                            <!-- <span class="right badge badge-danger">New</span> -->
+                        </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="<?= base_url('fileupload') ?>" class="nav-link">
+                        <i class="nav-icon fas fa-upload"></i>
+                        <p>
+                            Upload
                             <!-- <span class="right badge badge-danger">New</span> -->
                         </p>
                     </a>
