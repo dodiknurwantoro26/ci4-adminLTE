@@ -43,9 +43,9 @@ class Validation extends BaseConfig
     // --------------------------------------------------------------------
 
     public $siswa = [
-        //validasi data tidak adda yang sama
+        //validasi data tidak ada yang sama
         'nis' => 'required|is_unique[tbl_siswa.nis]|min_length[5];',
-        'nama' => 'required|max_lenght[20]',
+        'nama' => 'required|max_length[20]',
         'email' => 'required|valid_email',
         'img_siswa' => 'uploaded[foto_siswa]|mime_in[foto_siswa, img/jpg, img/png, img/10]|max_size[foto_siswa, 2000]'
     ];
@@ -59,7 +59,7 @@ class Validation extends BaseConfig
         ],
         'nama' => [
             'requires' => 'NiS wajin diisi',
-            'max_lenght' => 'maksimal 20 karakter',
+            'max_length' => 'maksimal 20 karakter',
 
         ],
         'email' => [
@@ -70,7 +70,7 @@ class Validation extends BaseConfig
         'img_siswa' => [
             'uploaded' => 'wajin diisi',
             'mime_in' => 'wajib format type PNG,JPG,JPEG',
-            'min_lenght' => 'Ukuran maximal upload 2MB',
+            'min_length' => 'Ukuran maximal upload 2MB',
 
         ],
     ];
