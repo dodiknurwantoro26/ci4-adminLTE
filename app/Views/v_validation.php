@@ -20,11 +20,7 @@ if (!empty($errors)) { ?>
                 <li> <?= esc($error) ?> </li>
             <?php }  ?>
         </ul>
-
-
     </div>
-
-
 <?php } ?>
 
 
@@ -59,6 +55,33 @@ if (!empty($errors)) { ?>
         <button type="submit" class="btn btn-primary">Upload</button>
     </div>
     <?= form_close(); ?>
+
+
+    <table id="example1" class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Nis</th>
+                <th>Nama</th>
+                <th>Email</th>
+                <th>Gambar/Foto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php $no = 1;
+            foreach ($data as $key => $value) :
+            ?>
+                <tr>
+                    <th><?= $no++; ?></th>
+                    <th><?= $value['nis']; ?></th>
+                    <th><?= $value['nama']; ?></th>
+                    <th><?= $value['email']; ?></th>
+                    <th><img src="<?= base_url('img_siswa/' . $value['foto_siswa']); ?>" width="200px"></th>
+                </tr>
+            <?php endforeach;
+            ?>
+        </tbody>
+    </table>
 
 
 </div>

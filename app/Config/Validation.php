@@ -44,31 +44,31 @@ class Validation extends BaseConfig
 
     public $siswa = [
         //validasi data tidak ada yang sama
-        'nis' => 'required|is_unique[tbl_siswa.nis]|min_length[5];',
+        'nis' => 'required|is_unique[tbl_siswa.nis]|min_length[5]',
         'nama' => 'required|max_length[20]',
         'email' => 'required|valid_email',
-        'img_siswa' => 'uploaded[foto_siswa]|mime_in[foto_siswa, img/jpg, img/png, img/10]|max_size[foto_siswa, 2000]'
+        'foto_siswa' => 'uploaded[foto_siswa]|mime_in[foto_siswa,image/jpg,image/png,image/jpeg]|max_size[foto_siswa,1000]'
     ];
 
-    public $siswa_eror = [
+    public $siswa_errors = [
         'nis' => [
-            'requires' => 'NiS wajin diisi',
-            'is_unique' => 'NiS sudah ada, input yang lain',
+            'required' => 'Nis wajin diisi',
+            'is_unique' => 'Nis sudah ada, input yang lain',
             'min_lenght' => 'Minimal 4 karakter',
 
         ],
         'nama' => [
-            'requires' => 'NiS wajin diisi',
+            'required' => 'Nis wajin diisi',
             'max_length' => 'maksimal 20 karakter',
 
         ],
         'email' => [
-            'requires' => 'NiS wajin diisi',
+            'required' => 'NiS wajin diisi',
             'valid_email' => 'Input dengan format email',
 
         ],
-        'img_siswa' => [
-            'uploaded' => 'wajin diisi',
+        'foto_siswa' => [
+            'uploaded' => 'Gambar wajib diisi',
             'mime_in' => 'wajib format type PNG,JPG,JPEG',
             'min_length' => 'Ukuran maximal upload 2MB',
 

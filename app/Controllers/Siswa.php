@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\SiswaModel;
+use App\Config\Validation;
 
 class Siswa extends BaseController
 {
@@ -22,6 +23,7 @@ class Siswa extends BaseController
 
         $data = array(
             'title' => 'Validation (Input Siswa)',
+            'data' => $this->SiswaModel->get_upload(),
             'isi' => 'v_validation',
         );
         echo view('layout/wrapper', $data);
@@ -30,8 +32,9 @@ class Siswa extends BaseController
     //validasi methode
     public function save()
     {
+
         // load file Validation di folder /config
-        $validation = \config\Services::validation();
+        $validation = \Config\Services::validation();
 
         //mengambil file upload
         $image = $this->request->getFile('foto_siswa');
@@ -47,15 +50,16 @@ class Siswa extends BaseController
             'foto_siswa' => $name,
         ];
 
-        if ($validation->run($data, 'siswa') == false) {
-            session()->getFlashdata('inputs', $this->request->getPost());
-            session()->getFlashdata('errors', $validation->getErrors());
+
+        if ($validation->run($data, 'siswa') == FALSE) {
+            session()->setFlashdata('inputs', $this->request->getPost());
+            session()->setFlashdata('errors', $validation->getErrors());
             return redirect()->to(base_url('siswa/index'));
         } else {
-            $image->move(ROOTPATH, 'public/img_siswa');
+            $image->move(ROOTPATH . 'public/img_siswa', $name);
             $this->SiswaModel->insert_siswa($data);
-            session()->getFlashdata('succes', 'Data Berhasil di Tambah');
-            return redirect()->to(base_url('product'));
+            session()->setFlashdata('success', 'Data Berhasil di Tambah');
+            return redirect()->to(base_url('siswa/index'));
         }
     }
 }
