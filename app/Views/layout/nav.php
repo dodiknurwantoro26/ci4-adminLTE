@@ -114,7 +114,7 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="<?= base_url('uploads') ?>" class="nav-link">
+                    <a href="<?= base_url('multiupload') ?>" class="nav-link">
                         <i class="nav-icon fas fa-upload"></i>
                         <p>
                             Multi Uploads

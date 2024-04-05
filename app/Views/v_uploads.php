@@ -8,13 +8,14 @@
         </div>
     <?php  }   ?>
 
+
     <div class="card card-primary">
         <div class="card-header">
             <h3 class="card-title">Upload Gambar</h3>
         </div>
         <!-- /.card-header -->
         <!-- form start -->
-        <?= form_open_multipart(base_url('uploads/save')); ?>
+        <?= form_open_multipart(base_url('multiupload/save')); ?>
         <div class="card-body">
             <div class="form-group">
                 <label>Judul</label>
@@ -32,3 +33,5 @@
             </div>
             <?= form_close(); ?>
         </div>
+    </div>
+</div>

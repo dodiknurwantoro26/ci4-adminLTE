@@ -18,4 +18,16 @@ class UploadsModel extends Model
         //input database
         return $this->db->table('tbl_galeries')->insert($data);
     }
+
+    public function view_upload()
+    {
+        //ambil semua value tabel database
+        return $this->db->table('tbl_uploads')->get()->getResultArray();
+    }
+
+    public function view_galeries()
+    {
+        //ambil semua value tabel database
+        return $this->db->table('tbl_galeries')->get()->getResultArray();
+    }
 }

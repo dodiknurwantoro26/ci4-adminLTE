@@ -5,7 +5,7 @@ namespace App\Controllers;
 use CodeIgniter\Controller;
 use App\Models\UploadsModel;
 
-class Uploads extends BaseController
+class Multiupload extends BaseController
 {
     //variable global
     protected $UploadsModel;
@@ -31,12 +31,19 @@ class Uploads extends BaseController
     public function save()
     {
         $judul = $this->request->getPost('judul');
-        $files = $this->request->getFile('');
+        $files = $this->request->getFiles('');
+
+        $data_upload = [
+            'judul' => $this->request->getPost('judul'),
+        ];
+        $data_galeries = [
+            'gambar' => $this->request->getPost('gambar'),
+        ];
 
         if ($files) {
             $random = rand(000, 999);
             $data_uploads = [
-                'id' => $random,
+                'id_upload' => $random,
                 'judul' => $judul,
             ];
             $this->UploadsModel->insert_upload($data_uploads);
@@ -46,11 +53,13 @@ class Uploads extends BaseController
                     'id_upload' => $random,
                     'gambar' => $img->getRandomName(),
                 ];
-                $this->UploadsModel->insert_galeries($$data_galery);
-                $img->move(ROOTPATH . 'public/uploads', $img->getRandomName());
+                $this->UploadsModel->insert_galeries($data_galery);
+                $img->move(ROOTPATH . 'public/multi_uploads', $img->getRandomName());
             }
-            session()->setFlashdata('success', 'Data berhasil Upload');
-            return redirect()->to(base_url('uploads/index'));
+            $this->UploadsModel->view_upload($data_upload);
+            $this->UploadsModel->view_galeries($data_galeries);
+            session()->setFlashdata('success', 'File Berhasil Upload');
+            return redirect()->to(base_url('multiupload/index'));
         }
     }
 }
