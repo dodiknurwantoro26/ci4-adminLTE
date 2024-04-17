@@ -34,4 +34,28 @@
             <?= form_close(); ?>
         </div>
     </div>
+
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Keterangan</th>
+                <th>Gambar/Foto</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php $no = 1;
+            foreach ($data as $key => $value) :
+            ?>
+                <tr>
+                    <th><?= $no++; ?></th>
+                    <th><?= $value['gambar']; ?></th>
+                    <th><img src="multi_uploads/1712308058_726dcab58c8285a2c214.png" width="200px"></th>
+                    <th><img src="<?= base_url('multi_uploads/' . $value['gambar']); ?>" width="200px"></th>
+                </tr>
+            <?php endforeach;
+            ?>
+        </tbody>
+    </table>
+
 </div>

@@ -23,6 +23,7 @@ class Multiupload extends BaseController
 
         $data = [
             'title' => 'Multi Uploads',
+            'data' => $this->UploadsModel->view_galeries(),
             'isi' => 'v_uploads',
         ];
         echo view('layout/wrapper', $data);
