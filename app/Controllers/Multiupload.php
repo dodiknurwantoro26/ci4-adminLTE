@@ -31,6 +31,7 @@ class Multiupload extends BaseController
 
     public function save()
     {
+
         $judul = $this->request->getPost('judul');
         $files = $this->request->getFiles('');
 
@@ -41,6 +42,26 @@ class Multiupload extends BaseController
             'gambar' => $this->request->getPost('gambar'),
         ];
 
+        // $namafile=null;
+
+        // if($files->getPath())
+        //     {
+        //     if(!$files->hasMoved())
+        //     {
+        //         $namafile="img-".getGUID().''.''.$files->getExtension();
+
+        //         if(file_exists(FCPATH.$this->uploadFolder.$namafile))
+        //     {
+        //      $filelama = new File(FCPATH.$this->uploadFolder.$namafile);
+        //      $filelama->move(FCPATH.$this->uploadFolder."backup/",$filelama->
+        //      getBasename($files->getExtension()).date("YmdHms").''.''.$files->getExtension());
+        //     }
+        //     $files->move(FCPATH.$this->uploadFolder,$namafile);
+        //     }
+
+        // }
+
+        // ## code lama ##
         if ($files) {
             $random = rand(000, 999);
             $data_uploads = [
@@ -52,10 +73,10 @@ class Multiupload extends BaseController
             foreach ($files['file_upload'] as $key => $img) {
                 $data_galery = [
                     'id_upload' => $random,
-                    'gambar' => $img->getRandomName(),
+                    'gambar' => $namefile = $img->getRandomName(),
                 ];
                 $this->UploadsModel->insert_galeries($data_galery);
-                $img->move(ROOTPATH . 'public/multi_uploads', $img->getRandomName());
+                $img->move(ROOTPATH . 'public/multi_uploads', $namefile);
             }
             $this->UploadsModel->view_upload($data_upload);
             $this->UploadsModel->view_galeries($data_galeries);

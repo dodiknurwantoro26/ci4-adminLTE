@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `test` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
+USE `test`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: localhost    Database: test
@@ -29,7 +31,7 @@ CREATE TABLE `tbl_siswa` (
   `email` varchar(255) NOT NULL,
   `foto_siswa` varchar(255) NOT NULL,
   PRIMARY KEY (`id_siswa`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,6 +40,7 @@ CREATE TABLE `tbl_siswa` (
 
 LOCK TABLES `tbl_siswa` WRITE;
 /*!40000 ALTER TABLE `tbl_siswa` DISABLE KEYS */;
+INSERT INTO `tbl_siswa` VALUES (1,'123456','Dodik','dodik@test.com','1712205326_6442cb6d78bc872aee5e.png'),(2,'1234567','Dodik','dodik@test.com','1712205595_a6c2d9d8fa4ee23cd063.png');
 /*!40000 ALTER TABLE `tbl_siswa` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-20  0:10:04
+-- Dump completed on 2024-04-19 19:22:08

@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `test` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
+USE `test`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: localhost    Database: test
@@ -26,7 +28,7 @@ CREATE TABLE `tbl_uploads` (
   `id_upload` int(11) NOT NULL AUTO_INCREMENT,
   `judul` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id_upload`)
-) ENGINE=InnoDB AUTO_INCREMENT=731 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=759 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -35,7 +37,7 @@ CREATE TABLE `tbl_uploads` (
 
 LOCK TABLES `tbl_uploads` WRITE;
 /*!40000 ALTER TABLE `tbl_uploads` DISABLE KEYS */;
-INSERT INTO `tbl_uploads` VALUES (76,'Test Album 1'),(420,'Test Album 1'),(730,'Test Multi Upload 1');
+INSERT INTO `tbl_uploads` VALUES (213,'test 1'),(445,'Test Album 1');
 /*!40000 ALTER TABLE `tbl_uploads` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -48,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-05 21:00:55
+-- Dump completed on 2024-04-19 19:22:07

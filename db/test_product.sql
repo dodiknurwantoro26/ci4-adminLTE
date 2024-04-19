@@ -29,7 +29,7 @@ CREATE TABLE `product` (
   `product_name` varchar(255) NOT NULL,
   `product_description` varchar(255) NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -38,7 +38,7 @@ CREATE TABLE `product` (
 
 LOCK TABLES `product` WRITE;
 /*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'Smart Phone','Samsung'),(2,'Laptop','Asus'),(3,'PC AIO','Acer'),(4,'Smart Phone','Iphone');
+INSERT INTO `product` VALUES (1,'Smart Phone','Samsung'),(2,'Laptop','Asus'),(3,'PC AIO','Acer'),(4,'Smart Phone','Iphone'),(5,'Smarphone','Xiaomi'),(7,'Motor','Honda'),(8,'Mobil','Toyota'),(10,'PC AIO','Asus'),(11,'Mobil','Honda'),(12,'Smarphone','Vivo');
 /*!40000 ALTER TABLE `product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -51,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-17 23:22:14
+-- Dump completed on 2024-04-19 19:22:07

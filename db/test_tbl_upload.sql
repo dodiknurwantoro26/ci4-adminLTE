@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `test` /*!40100 DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci */;
+USE `test`;
 -- MySQL dump 10.13  Distrib 8.0.36, for Win64 (x86_64)
 --
 -- Host: localhost    Database: test
@@ -27,7 +29,7 @@ CREATE TABLE `tbl_upload` (
   `ket` varchar(255) NOT NULL,
   `gambar` varchar(255) NOT NULL,
   PRIMARY KEY (`id_upload`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +38,7 @@ CREATE TABLE `tbl_upload` (
 
 LOCK TABLES `tbl_upload` WRITE;
 /*!40000 ALTER TABLE `tbl_upload` DISABLE KEYS */;
-INSERT INTO `tbl_upload` VALUES (1,'gambar1','gambar1.jpg'),(2,'Test','screencapture-192-168-200-254-4444-webconsole-webpages-index-jsp-2024-03-07-08_56_17.png'),(3,'TEST 2','screencapture-192-168-200-254-4444-webconsole-webpages-index-jsp-2024-03-07-08_56_18.png'),(4,'test 3','screencapture-192-168-200-254-4444-webconsole-webpages-index-jsp-2024-03-06-08_41_27.png'),(5,'Test 4','Screenshot 2024-03-01 151355.png'),(6,'test 5','Screenshot 2024-02-29 145109.png'),(7,'Test 6','Screenshot 2024-02-29 170409.png');
+INSERT INTO `tbl_upload` VALUES (1,'gambar1','gambar1.jpg'),(2,'Test','screencapture-192-168-200-254-4444-webconsole-webpages-index-jsp-2024-03-07-08_56_17.png'),(3,'TEST 2','screencapture-192-168-200-254-4444-webconsole-webpages-index-jsp-2024-03-07-08_56_18.png'),(4,'test 3','screencapture-192-168-200-254-4444-webconsole-webpages-index-jsp-2024-03-06-08_41_27.png'),(5,'Test 4','Screenshot 2024-03-01 151355.png'),(6,'test 5','Screenshot 2024-02-29 145109.png'),(7,'Test 6','Screenshot 2024-02-29 170409.png'),(8,'test 7','medium-shot-man-with-hoodie-holding-laptop-e1646646997479-removebg-preview.png');
 /*!40000 ALTER TABLE `tbl_upload` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-03-20  0:10:04
+-- Dump completed on 2024-04-19 19:22:08
