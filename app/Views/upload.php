@@ -4,22 +4,19 @@
      <!-- notifikasi jika upload berhasil -->
      <?php
         if (!empty(session()->getFlashdata('success'))) { ?>
-         <div class="alert alert-success"></div>
-         <?php echo session()->getFlashdata('success') ?>
+         <div class="alert alert-success">
+             <?= session()->getFlashdata('success') ?>
+         </div>
      <?php  }   ?>
 
      <!-- notifikasi jika upload gagal -->
      <?php
-        // $errors = $validate->getErrors();
-        // if (!empty($errors)) { 
-        ?>
-     <!-- <div class="alert alert-danger">
-         <?php // $validate->listError() 
-            ?>
-     </div> -->
-
-     <?php //} 
-        ?>
+        $error = $validation->getErrors();
+        if (!empty($error)) { ?>
+         <div class="alert alert-danger">
+             <?= $validation->listErrors(); ?>
+         </div>
+     <?php  }   ?>
 
      <!-- general form elements -->
      <div class="card card-primary">
@@ -78,7 +75,7 @@
                  <tr>
                      <th><?= $no++; ?></th>
                      <th><?= $value['ket']; ?></th>
-                     <th><img src="<?= base_url('upload/' . '$value[gambar]'); ?>" width="200px"></th>
+                     <th><img src="<?= base_url('img/' . $value['gambar']); ?>" width="200px"></th>
                  </tr>
              <?php endforeach;
                 ?>

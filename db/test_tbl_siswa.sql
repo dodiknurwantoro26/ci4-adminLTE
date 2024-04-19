@@ -18,28 +18,30 @@ USE `test`;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `product`
+-- Table structure for table `tbl_siswa`
 --
 
-DROP TABLE IF EXISTS `product`;
+DROP TABLE IF EXISTS `tbl_siswa`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `product` (
-  `product_id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_name` varchar(255) NOT NULL,
-  `product_description` varchar(255) NOT NULL,
-  PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+CREATE TABLE `tbl_siswa` (
+  `id_siswa` int(11) NOT NULL AUTO_INCREMENT,
+  `nis` varchar(255) NOT NULL,
+  `nama` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `foto_siswa` varchar(255) NOT NULL,
+  PRIMARY KEY (`id_siswa`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `product`
+-- Dumping data for table `tbl_siswa`
 --
 
-LOCK TABLES `product` WRITE;
-/*!40000 ALTER TABLE `product` DISABLE KEYS */;
-INSERT INTO `product` VALUES (1,'Smart Phone','Samsung'),(2,'Laptop','Asus'),(3,'PC AIO','Acer'),(4,'Smart Phone','Iphone'),(5,'Smarphone','Xiaomi'),(7,'Motor','Honda'),(8,'Mobil','Toyota'),(10,'PC AIO','Asus'),(11,'Mobil','Honda'),(12,'Smarphone','Vivo');
-/*!40000 ALTER TABLE `product` ENABLE KEYS */;
+LOCK TABLES `tbl_siswa` WRITE;
+/*!40000 ALTER TABLE `tbl_siswa` DISABLE KEYS */;
+INSERT INTO `tbl_siswa` VALUES (1,'123456','Dodik','dodik@test.com','1712205326_6442cb6d78bc872aee5e.png'),(2,'1234567','Dodik','dodik@test.com','1712205595_a6c2d9d8fa4ee23cd063.png');
+/*!40000 ALTER TABLE `tbl_siswa` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -51,4 +53,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-04-19 19:22:07
+-- Dump completed on 2024-04-19 19:22:08
